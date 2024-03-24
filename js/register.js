@@ -33,7 +33,6 @@ function registerOutput(isUsernameGood, isEmailGood, isPasswordGood){
   }
 } 
 
-
 //Get Username from Form
 let registerForm = document.getElementsByName("registerForm")[0];
 
