@@ -1,0 +1,25 @@
+{
+  "name": "userauth",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celuro/user-authentication.git"
+  },
+  "author": "celuro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celuro/user-authentication/issues"
+  },
+  "homepage": "https://github.com/celuro/user-authentication#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.1",
+    "mongoose": "^8.2.3",
+    "twilio": "^5.0.1"
+  }
+}
