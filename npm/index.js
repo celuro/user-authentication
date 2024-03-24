@@ -3,6 +3,7 @@ const app = express();
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const User = require('./user');
+const path = require('path');
 
 //Connect to MongoDB Atlas
 mongoose.connect('mongodb+srv://celuro:I9vf7XGoqfBhmgm7@userauthceluro.91n2lva.mongodb.net/?retryWrites=true&w=majority&appName=UserAuthCeluro', {});
@@ -37,18 +38,38 @@ app.post('/html/register.html', async (req, res) => {
 
     //Save user to database
     await user.save();
-
+    console.log("User registered successfully");
     res.send('User registered successfully');
   }
   catch (error){
   console.error(error);
+  console.log("Error requesting user");
   res.status(500).send("Error requesting user");
   }
 });
 
+app.use(express.static(path.join(__dirname, 'html')));
+
 app.get('/', (req, res) => {
-  res.send("Hello, world!");
+  res.sendFile('index.html');
 });
+
+app.get('/register', (req, res) => {
+  res.sendFile('register.html');
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile('login.html');
+});
+
+app.get('/reset', (req, res) => {
+  res.sendFile('reset.html');
+});
+
+app.get('/user', (req, res) => {
+  res.sendFile(__dirname + 'user.html');
+});
+
 
 const port = 3000;
 app.listen(port, () => {
