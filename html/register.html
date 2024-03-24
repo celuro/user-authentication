@@ -11,7 +11,7 @@
     </nav>
   <heading><h1>Register</h1></heading>
   <h2>Create an Account</h2>
-  <form name="registerForm" action="/html/register.html" method="POST">
+  <form name="registerForm" method="POST">
   <label for="username">Enter a username</label><br>
   <input type="text" id="username" name="username" minlength="5" maxlength="20"required>
   <br>
@@ -22,6 +22,9 @@
   <input type="password" id="password" name="password" minlength="8" maxlength="16"required>
   <br>
   <input type="submit" value="Submit">
+  <!--Register Output-->
+  <p id="output"></p>
   </form>
+  <script src="/js/register.js"></script>
   </body>
 </html>
